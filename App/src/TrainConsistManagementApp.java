@@ -1,25 +1,37 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class UseCase1TrainConsistMgmt {
+class UseCase2TrainConsistMgmt {
 
     public static void main(String[] args) {
 
-        // Display Welcome Banner
         System.out.println("======================================");
-        System.out.println("   Train Consist Management App");
+        System.out.println(" UC2 - Add Passenger Bogies to Train ");
         System.out.println("======================================\n");
 
-        // Create a dynamic list to store train bogies
-        List<String> trainConsist = new ArrayList<>();
+        // Create an ArrayList to hold passenger bogies
+        List<String> passengerBogies = new ArrayList<>();
 
-        // Display initialization message
-        System.out.println("Train initialized successfully...");
+        // ---- CREATE (Add bogies) ----
+        passengerBogies.add("Sleeper");
+        passengerBogies.add("AC Chair");
+        passengerBogies.add("First Class");
 
-        // Display initial bogie count
-        System.out.println("Initial bogie count: " + trainConsist.size());
+        // ---- READ (Display bogies) ----
+        System.out.println("Passenger bogies after addition:");
+        System.out.println(passengerBogies);
 
-        // Display current state of train
-        System.out.println("Current train consist: " + trainConsist);
+        // ---- DELETE (Remove a bogie) ----
+        passengerBogies.remove("AC Chair");
+        System.out.println("\nAfter removing 'AC Chair':");
+        System.out.println(passengerBogies);
+
+        // ---- CHECK (Existence) ----
+        boolean isSleeperPresent = passengerBogies.contains("Sleeper");
+        System.out.println("\nIs 'Sleeper' present? " + isSleeperPresent);
+
+        // ---- Final State ----
+        System.out.println("\nFinal passenger bogie list:");
+        System.out.println(passengerBogies);
     }
 }
